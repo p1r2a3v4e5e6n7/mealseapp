@@ -20,7 +20,7 @@ class ApiStateNotifier extends StateNotifier<AsyncValue<List<User>>> {
   Future<void> fetchUsers() async {
     if (isDataLoaded) return;
     try {
-      final users = await apiServices.getRequest('users');
+      final users = await ApiServicesCall.getRequest('users');
 
       state = AsyncValue.data(users);
       isDataLoaded = true;

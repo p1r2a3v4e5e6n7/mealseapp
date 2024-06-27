@@ -12,6 +12,7 @@ class ApiServicesCall {
   //GET Request
 
   static Future<dynamic> getRequest(String endpoint) async {
+    
     try {
       final response =
           await http.get(Uri.parse('$baseUrl/$endpoint'), headers: headers);
